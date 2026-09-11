@@ -120,8 +120,6 @@ actually that type.
 - `JsonObject` keeps insertion order (it's backed by a `LinkedHashMap`).
 
 ## License
-
-## License
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](https://unlicense.org/)
 
 This is free and unencumbered software released into the public domain.
