@@ -4,22 +4,22 @@ A small, dependency-free JSON parsing and writing library for Java.
 
 `jsonparser` reads JSON text into a tree of simple node objects
 (`JsonObject`, `JsonArray`, `JsonString`, `JsonNumber`), lets you build
-that tree up programmatically with a fluent API, and writes it back out
-as JSON text.
+that tree up in code with a fluent API, and writes it back out as JSON
+text.
 
 ## Features
 
 - Parse JSON from a `String`, `File`, or `Path`
 - Build JSON documents in code with chainable `put`/`add` methods
 - Write a `JsonObject` back out to a file
-- Iterate over objects and arrays directly (`JsonObject`/`JsonArray`
+- Loop over objects and arrays directly (`JsonObject`/`JsonArray`
   implement `Iterable`)
-- No external dependencies — built on `java.util.Scanner` and `java.nio.file`
+- No external dependencies. Just `java.util.Scanner` and `java.nio.file`
 
 ## Installation
 
-This library is not currently published to a package repository. To use
-it, clone the repo and build it locally, or copy the
+This library isn't published to a package repository yet. To use it,
+clone the repo and build it locally, or copy the
 `com.github.jamesrvickers.jsonparser` package into your project.
 
 ```bash
@@ -55,7 +55,7 @@ for (JsonNode tag : tags) {
 }
 ```
 
-You can also parse directly from a file:
+You can also parse straight from a file:
 
 ```java
 JsonParser parser = new JsonParser(new File("data.json"));
@@ -93,32 +93,35 @@ writer.write();
 
 ## API overview
 
-| Class                | Description                                                        |
+| Class                | What it does                                                        |
 |-----------------------|----------------------------------------------------------------------|
 | `Json`                | Static entry point: `parse`, `write`, and node/object/array factories |
-| `JsonNode`             | Abstract base type for every value in a JSON tree                   |
+| `JsonNode`             | Base type for every value in a JSON tree                            |
 | `JsonObject`           | An ordered map of string keys to `JsonNode` values                  |
 | `JsonArray`            | An ordered list of `JsonNode` values                                 |
-| `JsonString`           | A string value (also backs the `true`/`false`/`null` literals)      |
+| `JsonString`           | A string value (also used for the `true`/`false`/`null` literals)   |
 | `JsonNumber`           | A numeric value, stored internally as a `double`                     |
-| `JsonParser`           | The recursive-descent parser that turns text into a `JsonObject`     |
-| `JsonWriter`           | Writes a `JsonObject` to a file as JSON text                         |
-| `JsonParseException`   | Thrown on invalid JSON or an invalid node type conversion            |
+| `JsonParser`           | Turns JSON text into a `JsonObject`                                  |
+| `JsonWriter`           | Writes a `JsonObject` out to a file as JSON text                     |
+| `JsonParseException`   | Thrown on invalid JSON or a bad node type conversion                 |
 | `JsonWriteException`   | Thrown when writing a JSON document to a file fails                  |
 
 ### Reading values off a node
 
-Every `JsonNode` exposes typed accessors — `asObject()`, `asArray()`,
-`asString()`, `asInt()`, `asDouble()`, `asFloat()`, `asLong()`,
-`asBoolean()` — each of which throws `JsonParseException` if the node
-isn't actually that type.
+Every `JsonNode` has typed accessors like `asObject()`, `asArray()`,
+`asString()`, `asInt()`, `asDouble()`, `asFloat()`, `asLong()`, and
+`asBoolean()`. Each one throws `JsonParseException` if the node isn't
+actually that type.
 
 ## Notes
 
-- The top-level element of any parsed document must be a JSON object —
+- The top-level element of any parsed document has to be a JSON object.
   `Json.parse` and `JsonParser.parse()` both return a `JsonObject`.
-- `JsonObject` preserves insertion order (it's backed by a `LinkedHashMap`).
+- `JsonObject` keeps insertion order (it's backed by a `LinkedHashMap`).
 
 ## License
 
-_Add a license for this project (e.g. MIT) before publishing._
+No license yet. That means, by default, all rights are reserved, and
+others can't legally use, copy, or modify this code even though it's
+public. If you want people to be able to use it, consider adding a
+license like MIT later.
