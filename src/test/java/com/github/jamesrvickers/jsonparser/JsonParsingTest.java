@@ -4,10 +4,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 
-import com.github.jamesrvickers.jsonparser.Json;
-import com.github.jamesrvickers.jsonparser.JsonObject;
-import com.github.jamesrvickers.jsonparser.JsonParseException;
-
 public class JsonParsingTest {
     public static void main(String[] args) {
         List<Method> tests = new ArrayList<>();
@@ -24,7 +20,7 @@ public class JsonParsingTest {
             }
             catch (IllegalAccessException | InvocationTargetException e) { }
         }
-        System.out.println(passed);
+        System.out.println("parsing:"+passed);
     }
 
 
