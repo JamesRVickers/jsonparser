@@ -22,6 +22,8 @@ This library isn't published to a package repository yet. To use it,
 clone the repo and build it locally, or copy the
 `com.github.jamesrvickers.jsonparser` package into your project.
 
+The project targets Java 25 LTS. Use a Java 25 JDK to build and run it.
+
 ```bash
 git clone https://github.com/jamesrvickers/jsonparser.git
 cd jsonparser
