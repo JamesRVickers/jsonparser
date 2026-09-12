@@ -3,12 +3,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.jamesrvickers</groupId>
-    <artifactId>jsonparser</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>my-new-project</artifactId>
     <version>1.0.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.JamesRVickers</groupId>
+            <artifactId>jsonparser</artifactId>
+            <version>v1.0.0</version>
+        </dependency>
+    </dependencies>
 </project>
