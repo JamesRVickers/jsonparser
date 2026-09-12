@@ -1,6 +1,9 @@
 package com.github.jamesrvickers.jsonparser;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * A {@link JsonNode} representing a JSON array: an ordered, mutable

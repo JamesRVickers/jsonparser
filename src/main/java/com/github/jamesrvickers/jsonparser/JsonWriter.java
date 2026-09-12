@@ -2,7 +2,8 @@ package com.github.jamesrvickers.jsonparser;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 /**
  * Writes a {@link JsonObject} to a file as JSON text.

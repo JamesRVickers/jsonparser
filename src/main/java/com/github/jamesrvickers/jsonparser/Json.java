@@ -1,6 +1,6 @@
 package com.github.jamesrvickers.jsonparser;
 
-import java.io.*;
+import java.io.File;
 
 /**
  * Entry point for the JSON parser library, providing static convenience
